@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: blue;
+            background-image: url("ppt.png");
+
+        }
+        
+        h2 {
+            display: flex;
+            justify-content: center;
+        }
+        .type{
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+        }
+
+        .int {
+            list-style-type: circle;
+            background-color: rgb(129, 135, 13);
+            color: aliceblue;
+            padding: 0px;
+            width: 50%;
+            border: 2px, rgb(0, 0, 0), solid;
+            border-radius: 25px;
+            margin-left: 25%;
+            position: relative;
+            top: 50px;
+            
+        }
+
+         .para {
+            font-family: sans-serif;
+            font-style: italic;
+             color: white;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 50px;
+        } 
+
+      
+
+        .box {
+            
+            color: white;
+            background-color: rgb(23, 88, 108);
+            border: 2px,black,solid;
+            border-radius: 10px;
+            width: 50%;
+            margin-left: 25%;
+            display: flex;
+            justify-content: center; 
+            position: relative;
+            top: 50px;
+
+        }
+        #add-ol{
+            list-style-type: disc;
+        }
+
+        li {
+            font-family:sans-serif ;
+            font-size: medium;
+            position: relative;
+            right: 15px;
+            width: 180px;
+            display: flex;
+            justify-content: space-between
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="int">
+        <div class="main">
+            <h2>TODO LIST</h2>
+        </div>
+        <div class="type">
+            <input type="text" placeholder="search" id="input" style="height: 30px;width: 300px;border-radius:15px ;">
+            <button onclick="add()" style="border-radius: 10px;">ADD</button>
+        </div>
+    </div>
+
+<div class="para">
+    <h2>TASK</h2>
+</div>
+
+
+    <div class="box">
+        <ol id="add-ol" >
+            <li></li>
+        </ol>
+    </div>
+
+
+
+    <script>
+        var add1ol = document.getElementById("add-ol")
+
+        function add() {
+            var addli = document.createElement("li")
+            addli.innerHTML = input.value + "<span onclick='delte(event)'>x</span>"
+            add1ol.append(addli)
+        }
+
+        function delte() {
+            event.target.parentElement.remove()
+
+        }
+
+    </script>
+</body>
+
+</html>
